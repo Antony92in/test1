@@ -32,7 +32,9 @@ class Team
     public function getSum(): int
     {   
         $sum = 0;
+
         foreach ($this->players as $player) {
+            
            $sum += $player->getPlayTime();
         }
         return $sum;
