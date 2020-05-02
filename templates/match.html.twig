@@ -129,7 +129,21 @@
                 {% endfor %}
                 </tbody>
                 Общее время игры:
-                {{ team.sum }}
+                {{ team.sum }}м.
+                <br>
+                Вратари:
+                {{ team.postime[0] }}м.
+                <br>
+                Нападающие:
+                {{ team.postime[1] }}м.
+                <br>
+                Защитники:
+                {{ team.postime[2] }}м.
+                <br>
+                Полузащитники:
+                {{ team.postime[3] }}м.
+                
+
             </table>
         </div>
     </div>

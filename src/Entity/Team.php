@@ -29,12 +29,38 @@ class Team
        
     }
 
+    public function getPostime(): array
+    {   
+        $goalkeeper = 0;
+        $attacker = 0;
+        $back = 0;
+        $halfback = 0;
+
+        foreach ($this->players as $player) {
+            if ($player->getPosition() == 'В') {
+                $goalkeeper += $player->getPlayTime();
+            }
+            if ($player->getPosition() == 'Н') {
+                $attacker += $player->getPlayTime();
+            }
+            if ($player->getPosition() == 'З') {
+                $back += $player->getPlayTime();
+            }
+            if ($player->getPosition() == 'П') {
+                $halfback += $player->getPlayTime();
+            }
+           
+        }
+            return array($goalkeeper, $attacker, $back, $halfback);
+
+    }
+
     public function getSum(): int
     {   
         $sum = 0;
 
         foreach ($this->players as $player) {
-            
+
            $sum += $player->getPlayTime();
         }
         return $sum;
